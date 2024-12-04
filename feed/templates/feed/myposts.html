@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+    
+    {% for post in posts %}
+        
+        {% if post.author == user %}
+            {% include "includes/post.html" with post=post show_detail_link=True %}
+        {% endif %}
+            
+    {% endfor %}
+        
+{% endblock %}
+    

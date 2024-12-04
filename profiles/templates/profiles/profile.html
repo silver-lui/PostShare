@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form method="post" class="mb-3">
+        {% csrf_token %}
+        {{ username_form.as_p }}
+        <br>
+        <input class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center" type="submit" name="update_username" value="Submit">
+    </form>
+    <br>
+
+    <form method="post" class="mb-3">
+        {% csrf_token %}
+        {{ password_form.as_p }}
+        <br>
+        <input class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center" type="submit" name="change_password" value="Submit">
+    </form>
+    <br>
+
+    <form method="post" enctype="multipart/form-data" class="mb-3">
+        {% csrf_token %}
+        {{ profile_picture_form.as_p }}
+        <br>
+        <input class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center" type="submit" name="update_picture" class="btn btn-primary">
+    </form>
+    <br>
+{% endblock %}
